@@ -20,5 +20,8 @@ from website.views import welcome
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('website.urls', namespace='website')),
-    path('',welcome),
+    path('',welcome, name="home" ),
+    path('meetings/', include('meetings.urls')),
+    # path('room/', rooms ,name= "room_details" ),
 ]
+ 
