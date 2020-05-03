@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%block title%} Welcome {%endblock%}
+
+{% block content %}
+    <header style="text-align: center;">Welcome to the PLANNER</header>
+    <h3>Hello USER</h3><br />
+    <div><b>This is just a random stuff over here</b></div> </br>
+    {{message}}
+    <p> Number of meetings available : {{number_of_meetings}}</p>
+    <h2>Meetings</h2><button type="button"><a href="{% url 'create' %}">+ADD</a></button>
+    <ul>
+        {% for meeting in meeting %}
+        <li>
+            <a href="{% url 'details' meeting.id %}"> {{meeting.title}} </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'room_details' %} "> Room </a>
+
+
+{% endblock %}
