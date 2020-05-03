@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%block title%} Meetings {%endblock%}
+
+{% block content %}
+    <header style="text-align: center;">Welcome to the PLANNER</header>
+    <h3>Hello USER</h3><br />
+    <div><b>{{meeting.title}}</b></div> </br>
+    <p>This meeting is scheduled on {{meeting.date}}, at {{maeeting.time}}, in {{meeting.room}} </p>
+    <button type="button"><a href="{% url 'create' %}">Done</a></button>
+    <button type="button"><a href="{% url 'create' %}">Cancel</a></button>
+    <button type="button"><a href="{% url 'create' %}">Reschedule</a></button>
+    <a href="{% url 'home' %} "> HOME </a>
+
+{%endblock%}
